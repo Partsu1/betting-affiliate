@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #00C27A;
+  --green-dim: #00A366;
+  --green-bg: #002B1A;
+  --dark: #0A0F0D;
+  --surface: #111815;
+  --surface2: #172018;
+  --border: rgba(0, 194, 122, 0.15);
+  --border-bright: rgba(0, 194, 122, 0.35);
+  --text: #E8F0EA;
+  --text-muted: #6B8A72;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.article-content h2 {
+  font-size: 1.4rem;
+  color: var(--green);
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-content p { color: #b0c4b8; margin-bottom: 1rem; }
+.article-content strong { color: var(--text); font-weight: 500; }
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.article-content th {
+  background: var(--surface2);
+  color: var(--green);
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-bright);
+}
+
+.article-content td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.article-content td:first-child { color: var(--text); }
+.article-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.article-content em { color: var(--text-muted); font-size: 0.85rem; }
+
+.article-content ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+.article-content ul li::before { content: '→'; color: var(--green); margin-right: 8px; }
+.article-content ul li { color: #b0c4b8; padding: 4px 0; }
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.live-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-green 1.4s ease-in-out infinite;
+}
